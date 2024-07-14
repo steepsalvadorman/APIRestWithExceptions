@@ -43,5 +43,4 @@ public class ClienteController {
         clienteServiceimpl.deleteCliente(id);
     }
 
-
 }

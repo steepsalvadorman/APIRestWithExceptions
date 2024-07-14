@@ -18,4 +18,5 @@ public class Cliente {
     private String nroDocumento;
     private String email;
     private Date createAt;
+
 }

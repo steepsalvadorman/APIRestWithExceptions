@@ -3,7 +3,6 @@ package com.example.practicando.services.interfaces;
 import com.example.practicando.model.Cliente;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface ClienteInterface {
 

@@ -10,14 +10,12 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @AllArgsConstructor
 public class ClienteServiceImpl implements ClienteInterface {
 
     private final ClienteRepository clienteRepository;
-    private final RestExceptionHandler restExceptionHandler;
 
 
     @Override
@@ -42,11 +40,11 @@ public class ClienteServiceImpl implements ClienteInterface {
 
     @Override
     public void updateCliente(Cliente cliente, int id) {
-        Cliente c = clienteRepository.findById((long) id).orElse(null);
+        Cliente c = getCliente(id);
         if (c != null) {
             clienteRepository.save(cliente);
         } else {
-            System.out.println("Cliente no encontrado");
+            throw new ResourceNotFoundException("El cliente no existe");
         }
     }
 
